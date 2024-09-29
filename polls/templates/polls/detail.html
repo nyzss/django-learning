@@ -1,0 +1,11 @@
+<h1>Choices list for question <span style="color:#1e4cb8">"{{ question.question_text }}"</span>:</h1>
+{% if question.choice_set.count %}
+	<ul>
+		{% for c in question.choice_set.all %}
+			<li>{{ c.choice_text }} - votes: {{ c.votes }}</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No choices for this question as of yet, check later.</p>
+{% endif %}
+

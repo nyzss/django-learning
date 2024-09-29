@@ -1,0 +1,10 @@
+<h1>Questions list:</h1>
+{% if question.count %}
+	<ul>
+		{% for q in question.all %}
+			<li><a href="/{{ q.id }}">{{ q.question_text }}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No questions are out yet.</p>
+{% endif %}
