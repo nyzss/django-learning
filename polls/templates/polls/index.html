@@ -2,7 +2,7 @@
 {% if question.count %}
 	<ul>
 		{% for q in question.all %}
-			<li><a href="/{{ q.id }}">{{ q.question_text }}</a></li>
+			<li><a href={% url "polls:detail" q.id %}>{{ q.question_text }}</a></li>
 		{% endfor %}
 	</ul>
 {% else %}
